@@ -7,6 +7,7 @@ index.html   Main website
 style.css    Design and responsive layout
 script.js    Live countdown, mobile menu and slideshow controls
 Highlights/  Photos used on the invitation
+Throwbacks/  Photos used in the Throwback Pictures card
 
 HOW TO PREVIEW
 --------------
@@ -33,8 +34,9 @@ folder of site files. Extract it first and upload the extracted folder.
 PERSONALISE BEFORE SHARING
 --------------------------
 A. WhatsApp RSVP number
-   The RSVP button opens WhatsApp for 0549698459. To change it, edit
-   the RSVP link in index.html using the international number without +.
+   The RSVP form opens WhatsApp for 0549698459. To change it, update
+   the form action and fallback link in index.html with the international
+   number without +.
 
 B. Ceremony countdown times
    The countdowns target 10:00 AM on 8 January 2027 and 1:00 PM on
@@ -46,10 +48,9 @@ C. Change the photographs
    The event, story, gallery and slideshow photos are set in index.html using files
    in Highlights/. The main background is set in style.css.
 
-D. Venue addresses and dress code
-   Edit the relevant "To be announced" text in index.html when you have
-   confirmed the church, reception and traditional wedding venue addresses,
-   directions and guest dress code.
+D. Venue and reception details
+   Update the venue and directions section in index.html when more details
+   are available.
 
 REDEPLOY AFTER CHANGES
 ----------------------

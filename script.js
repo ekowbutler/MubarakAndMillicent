@@ -48,3 +48,45 @@ slideshowControls.querySelectorAll("button").forEach(button => {
     });
   });
 });
+
+const rsvpForm = document.querySelector(".rsvp-form");
+const attendance = rsvpForm.elements.attendance;
+const rsvpDetails = rsvpForm.querySelector(".rsvp-details");
+const rsvpResponse = rsvpForm.querySelector(".rsvp-response");
+
+function updateRsvpChoice() {
+  const attending = attendance.value === "accept";
+  rsvpDetails.hidden = !attending;
+  rsvpDetails.disabled = !attending;
+  rsvpResponse.textContent = attendance.value === "decline"
+    ? "Thank you for letting us know. Please continue to pray for us as we begin our life together. ❤️"
+    : "";
+}
+
+attendance.addEventListener("change", updateRsvpChoice);
+window.addEventListener("pageshow", updateRsvpChoice);
+rsvpForm.addEventListener("submit", event => {
+  event.preventDefault();
+  if (attendance.value !== "accept") return;
+  const reply = new FormData(rsvpForm);
+  if (reply.get("website").trim()) return;
+
+  const message = [
+    "RSVP for Mubarak and Millicent's wedding",
+    `Full name: ${reply.get("fullName").trim()}`,
+    `Email: ${reply.get("email").trim()}`,
+    "Will you join us? Joyfully accept"
+  ];
+  const phone = reply.get("phone").trim();
+  const note = reply.get("message").trim();
+  if (phone) message.push(`Phone: ${phone}`);
+  message.push(`Number of guests: ${reply.get("guests")}`);
+  if (note) message.push(`Note: ${note}`);
+
+  const destination = new URL(rsvpForm.action);
+  destination.searchParams.set("text", message.join("\n"));
+  window.location.assign(destination.href);
+});
+
+updateRsvpChoice();
+rsvpForm.hidden = false;

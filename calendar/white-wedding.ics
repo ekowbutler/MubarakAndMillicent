@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mubarak and Millicent//Wedding//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:white-wedding-20270109T130000Z@mubarak-and-millicent
+DTSTAMP:20261121T220059Z
+DTSTART:20270109T130000Z
+SUMMARY:Mubarak & Millicent's White Wedding
+LOCATION:Our Lady Star of the Sea Catholic Church\, Dansoman Last Stop\, Ac
+ cra
+END:VEVENT
+END:VCALENDAR

@@ -93,6 +93,7 @@
             <p>We look forward to celebrating love, family and tradition with you.</p>
             <div class="detail-line"><span>TIME</span><strong>10:00 AM</strong></div>
             <div class="detail-line"><span>VENUE</span><strong>Golf Estate, near Community 25</strong></div>
+            <a class="text-link calendar-link" href="calendar/traditional-wedding.ics" download>Save to calendar ↓</a>
             <a class="text-link" href="#details">Venue information ↓</a>
           </div>
         </article>
@@ -105,6 +106,7 @@
             <p>Join us as we make our promises and celebrate the beginning of forever.</p>
             <div class="detail-line"><span>TIME</span><strong>1:00 PM</strong></div>
             <div class="detail-line"><span>VENUE</span><strong>Our Lady Star of the Sea Catholic Church</strong></div>
+            <a class="text-link calendar-link" href="calendar/white-wedding.ics" download>Save to calendar ↓</a>
             <a class="text-link" href="#details">Venue information ↓</a>
           </div>
         </article>
@@ -146,21 +148,55 @@
           <div class="info-icon">⌖</div>
           <h3>Venue &amp; directions</h3>
           <p><strong>Traditional wedding</strong><br>Golf Estate, near Community 25<br>Tema, Ghana</p>
-          <p><strong>White wedding</strong><br>Our Lady Star of the Sea Catholic Church<br>Dansoman Last Stop, Accra</p>
+          <p><strong>White wedding</strong><br><a href="https://www.google.com/maps/place/Our+Lady+Star+of+The+Sea+Catholic+Church/@5.5308173,-0.264958,17z/data=!3m1!4b1!4m6!3m5!1s0xfdf97a631d908a9:0xc0492706daa5dbbf!8m2!3d5.5308173!4d-0.264958!16s%2Fg%2F1hdz5zh9v" target="_blank" rel="noopener"><u>Our Lady Star of the Sea Catholic Church</u> ↗</a><br>Dansoman Last Stop, Accra</p>
           <p><strong>Wedding coordinators</strong><br>Baidoo · <a href="tel:+233538568630"><u>0538568630</u></a><br>Solomon · <a href="tel:+233549698459"><u>0549698459</u></a></p>
         </article>
         <article class="info-card">
-          <div class="info-icon">✧</div>
-          <h3>Dress code</h3>
-          <p>We want you to feel comfortable and look your best as you celebrate with us.</p>
-          <p><strong>Guest attire</strong><br><span>To be announced.</span></p>
-          <p class="small-note">Please check back for the approved colours and attire guidance.</p>
+          <div class="info-icon" aria-hidden="true">✧</div>
+          <h3>Throwback Pictures</h3>
+          <div class="throwback-grid">
+            <img src="Throwbacks/dinner.jpg" alt="Mubarak and Millicent smiling together at dinner" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="Throwbacks/outdoors.jpg" alt="The couple posing outdoors in colourful outfits" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="Throwbacks/holiday.jpg" alt="Mubarak and Millicent posing next to a Christmas tree" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="Throwbacks/rooftop.jpg" alt="Millicent sitting in a hanging chair beside Mubarak on a rooftop" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="Throwbacks/selfie.jpg" alt="Mubarak and Millicent taking a selfie outdoors" width="810" height="1080" loading="lazy" decoding="async">
+          </div>
         </article>
-        <article class="info-card">
-          <div class="info-icon">♡</div>
-          <h3>Kindly RSVP</h3>
-          <p>Your presence would mean so much to us. Please let us know if you will be joining the celebration.</p>
-          <a class="button button-dark" id="rsvp" href="https://wa.me/233549698459?text=Hello%21%20I%20would%20like%20to%20RSVP%20for%20Mubarak%20and%20Millicent%27s%20wedding%20on%208%20and%2For%209%20January%202027." target="_blank" rel="noopener">RSVP ON WHATSAPP</a>
+        <article class="info-card" id="rsvp">
+          <p class="eyebrow">Kindly reply</p>
+          <h3>Are You Attending?</h3>
+          <p>Please let us know by <strong><time datetime="2027-01-05">5 January 2027</time></strong> so we can save you a seat.</p>
+          <form class="rsvp-form" action="https://wa.me/233549698459" hidden>
+            <label for="rsvp-attendance">Will you join us?</label>
+            <select id="rsvp-attendance" name="attendance" required>
+              <option value="" selected disabled>Select a response</option>
+              <option value="accept">Yes, joyfully accept</option>
+              <option value="decline">No, regretfully decline</option>
+            </select>
+            <p class="rsvp-response" role="status"></p>
+            <fieldset class="rsvp-details" hidden disabled>
+              <div hidden>
+                <label for="rsvp-website">Leave this empty:</label>
+                <input id="rsvp-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <label for="rsvp-name">Full name</label>
+              <input id="rsvp-name" name="fullName" autocomplete="name" required>
+              <label for="rsvp-email">Email</label>
+              <input id="rsvp-email" name="email" type="email" autocomplete="email" required>
+              <label for="rsvp-phone">Phone <em>(optional)</em></label>
+              <input id="rsvp-phone" name="phone" type="tel" autocomplete="tel">
+              <label for="rsvp-guests">Number of guests (including you)</label>
+              <select id="rsvp-guests" name="guests">
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+              <label for="rsvp-message">A note for the couple <em>(optional)</em></label>
+              <textarea id="rsvp-message" name="message" rows="3"></textarea>
+              <button class="button button-dark" type="submit" aria-describedby="rsvp-help">Send my RSVP</button>
+              <p class="small-note" id="rsvp-help">WhatsApp opens with your reply ready to send.</p>
+            </fieldset>
+          </form>
+          <noscript><a class="button button-dark" href="https://wa.me/233549698459">RSVP on WhatsApp</a></noscript>
         </article>
       </div>
     </section>
@@ -178,8 +214,6 @@
         <h2 id="slideshow-title">More of our favourite moments</h2>
       </div>
       <ul class="slideshow-track" id="slideshow-track" tabindex="0" aria-label="Wedding photo slideshow">
-        <li><img src="Highlights/368A9470.jpg" alt="The couple standing together outdoors in black outfits" loading="lazy" decoding="async"></li>
-        <li><img src="Highlights/368A9473.jpg" alt="Mubarak and Millicent posing side by side in the garden" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9474.jpg" alt="The couple smiling at each other in the garden" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9475.jpg" alt="A close-up of the couple holding hands" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9480.jpg" alt="Mubarak and Millicent posing together on the lawn" loading="lazy" decoding="async"></li>
@@ -197,16 +231,11 @@
         <li><img src="Highlights/368A9614.jpg" alt="The couple looking at each other by the shoreline" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9631.jpg" alt="Mubarak holding Millicent close at the beach" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9666.jpg" alt="The couple embracing beside a palm tree" loading="lazy" decoding="async"></li>
-        <li><img src="Highlights/368A9671.jpg" alt="Mubarak posing in orange and white" loading="lazy" decoding="async"></li>
-        <li><img src="Highlights/368A9675.jpg" alt="Mubarak smiling in his orange outfit" loading="lazy" decoding="async"></li>
-        <li><img src="Highlights/368A9679.jpg" alt="Mubarak posing beside a tree with his arms crossed" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9690.jpg" alt="The couple reaching for each other in matching orange outfits" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9701.jpg" alt="Millicent embracing Mubarak in the evening" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9703.jpg" alt="Mubarak and Millicent leaning in close" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9731.jpg" alt="The couple sharing a moment in matching orange outfits" loading="lazy" decoding="async"></li>
         <li><img src="Highlights/368A9740.jpg" alt="Millicent seated beside Mubarak" loading="lazy" decoding="async"></li>
-        <li><img src="Highlights/368A9747.jpg" alt="Millicent posing in her orange dress" loading="lazy" decoding="async"></li>
-        <li><img src="Highlights/368A9763.jpg" alt="Millicent smiling in orange beside a guest" loading="lazy" decoding="async"></li>
       </ul>
       <div class="slideshow-controls" hidden>
         <button type="button" data-step="-1" aria-controls="slideshow-track">← Previous</button>

@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mubarak and Millicent//Wedding//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:traditional-wedding-20270108T100000Z@mubarak-and-millicent
+DTSTAMP:20261121T220059Z
+DTSTART:20270108T100000Z
+SUMMARY:Mubarak & Millicent's Traditional Wedding
+LOCATION:Golf Estate\, near Community 25\, Tema\, Ghana
+END:VEVENT
+END:VCALENDAR
