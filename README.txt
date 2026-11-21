@@ -6,7 +6,7 @@ FILES
 index.html   Main website
 style.css    Design and responsive layout
 script.js    Live countdown, mobile menu and WhatsApp RSVP
-images/      Add your own photos here
+Highlights/  Photos used on the invitation
 
 HOW TO PREVIEW
 --------------
@@ -41,24 +41,14 @@ A. WhatsApp RSVP number
    Save the file and redeploy the folder to Netlify.
 
 B. Ceremony countdown times
-   The two countdowns currently target 10:00 AM Ghana time (GMT) on
-   8 January 2027 and 9 January 2027. This is a temporary setting because
-   ceremony times have not yet been supplied.
-   In index.html, find data-date="2027-01-08T10:00:00+00:00" and
-   data-date="2027-01-09T10:00:00+00:00". Change 10:00:00 to the confirmed
-   local time in 24-hour format. Ghana is GMT (UTC+00:00).
+   The countdowns target 10:00 AM on 8 January 2027 and 1:00 PM on
+   9 January 2027 in Ghana local time (GMT).
+   To change a countdown, edit its data-date attribute in index.html.
+   Use 24-hour time with the UTC offset +00:00.
 
-C. Add your photographs
-   Put your photo files inside the images folder, for example:
-     images/couple-main.jpg
-     images/gallery-1.jpg
-     images/gallery-2.jpg
-     images/gallery-3.jpg
-   The current page has elegant photo placeholders rather than actual
-   personal photographs. To display your images, edit index.html and
-   replace the placeholder blocks with image elements, for example:
-     <img src="images/couple-main.jpg" alt="Mubarak and Millicent">
-   You can send the photos and I can update the website files for you.
+C. Change the photographs
+   The event, story and gallery photos are set in index.html using files
+   in Highlights/. The main background is set in style.css.
 
 D. Venue addresses and dress code
    Edit the relevant "To be announced" text in index.html when you have
