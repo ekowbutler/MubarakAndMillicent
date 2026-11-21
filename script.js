@@ -1,7 +1,4 @@
 // Mubarak & Millicent wedding website
-// Update the WhatsApp number below before publishing. Use international format
-// without spaces or the + sign, e.g. 233XXXXXXXXX.
-const RSVP_WHATSAPP_NUMBER = "233000000000";
 
 function updateCountdowns() {
   document.querySelectorAll(".timer").forEach(timer => {
@@ -24,20 +21,6 @@ function updateCountdowns() {
 updateCountdowns();
 setInterval(updateCountdowns, 1000);
 
-const rsvpLink = document.getElementById("rsvp");
-const rsvpNote = document.getElementById("rsvp-note");
-if (RSVP_WHATSAPP_NUMBER && !RSVP_WHATSAPP_NUMBER.includes("0000000000")) {
-  const message = encodeURIComponent("Hello! I would like to RSVP for Mubarak and Millicent's wedding on 8 and/or 9 January 2027.");
-  rsvpLink.href = `https://wa.me/${RSVP_WHATSAPP_NUMBER}?text=${message}`;
-  rsvpNote.textContent = "Tap the button above to send your RSVP on WhatsApp.";
-} else {
-  rsvpLink.href = "https://wa.me/";
-  rsvpLink.addEventListener("click", event => {
-    event.preventDefault();
-    alert("The couple's WhatsApp RSVP number will be added soon. Please check back later.");
-  });
-}
-
 const menuButton = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 menuButton.addEventListener("click", () => {
@@ -48,3 +31,20 @@ navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", ()
   navLinks.classList.remove("open");
   menuButton.setAttribute("aria-expanded", "false");
 }));
+
+const slideshow = document.getElementById("slideshow-track");
+const slideshowControls = document.querySelector(".slideshow-controls");
+const slides = Array.from(slideshow.children);
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+slideshowControls.hidden = false;
+slideshowControls.querySelectorAll("button").forEach(button => {
+  button.addEventListener("click", () => {
+    const current = Math.round(slideshow.scrollLeft / slideshow.clientWidth);
+    const next = (current + Number(button.dataset.step) + slides.length) % slides.length;
+    slideshow.scrollTo({
+      left: slides[next].offsetLeft,
+      behavior: reducedMotion.matches ? "instant" : "smooth"
+    });
+  });
+});

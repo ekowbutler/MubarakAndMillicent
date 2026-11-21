@@ -5,7 +5,7 @@ FILES
 -----
 index.html   Main website
 style.css    Design and responsive layout
-script.js    Live countdown, mobile menu and WhatsApp RSVP
+script.js    Live countdown, mobile menu and slideshow controls
 Highlights/  Photos used on the invitation
 
 HOW TO PREVIEW
@@ -33,12 +33,8 @@ folder of site files. Extract it first and upload the extracted folder.
 PERSONALISE BEFORE SHARING
 --------------------------
 A. WhatsApp RSVP number
-   Open script.js in a text editor.
-   Find:
-     const RSVP_WHATSAPP_NUMBER = "233000000000";
-   Replace the example with your real Ghana number in international format,
-   digits only, without + or spaces. Example format: 233XXXXXXXXX.
-   Save the file and redeploy the folder to Netlify.
+   The RSVP button opens WhatsApp for 0549698459. To change it, edit
+   the RSVP link in index.html using the international number without +.
 
 B. Ceremony countdown times
    The countdowns target 10:00 AM on 8 January 2027 and 1:00 PM on
@@ -47,7 +43,7 @@ B. Ceremony countdown times
    Use 24-hour time with the UTC offset +00:00.
 
 C. Change the photographs
-   The event, story and gallery photos are set in index.html using files
+   The event, story, gallery and slideshow photos are set in index.html using files
    in Highlights/. The main background is set in style.css.
 
 D. Venue addresses and dress code
