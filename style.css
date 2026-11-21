@@ -144,24 +144,52 @@
 
 .slideshow-controls:not([hidden]) {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 22px;
 }
 
 .slideshow-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   min-height: 44px;
-  padding: 0 18px;
-  border: 1px solid #8b6d52;
-  background: #faf8f4;
-  color: #4d3c30;
-  font: inherit;
+  padding: 0 clamp(9px, 2.4vw, 18px);
+  border: 1px solid #a58170;
+  border-radius: 999px;
+  background: #fffaf5;
+  color: #63473d;
+  box-shadow: 0 3px 8px rgba(76, 57, 43, .09);
+  font: 500 13px/1 "DM Sans", sans-serif;
   cursor: pointer;
+  transition: background-color .18s, border-color .18s, color .18s;
 }
 
 .slideshow-controls button:hover {
-  background: #6f5745;
-  color: #fff;
+  border-color: #835849;
+  background: #f4e1d9;
+}
+
+.slideshow-controls .slideshow-toggle {
+  border-color: #835849;
+  background: #835849;
+  color: #fffaf5;
+}
+
+.slideshow-controls .slideshow-toggle:hover {
+  border-color: #674235;
+  background: #674235;
+}
+
+.slideshow-heart {
+  color: #ffd6c9;
+}
+
+.slideshow-controls button:focus-visible {
+  outline: 2px solid #674235;
+  outline-offset: 3px;
 }
 
 .throwback-grid {

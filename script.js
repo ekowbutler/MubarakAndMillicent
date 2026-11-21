@@ -37,17 +37,51 @@ const slideshowControls = document.querySelector(".slideshow-controls");
 const slides = Array.from(slideshow.children);
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+const slideshowToggle = slideshowControls.querySelector(".slideshow-toggle");
+const slideshowToggleLabel = slideshowToggle.querySelector(".slideshow-toggle-label");
+let playing = !reducedMotion.matches;
+let slideshowVisible = false;
+let slideTimer;
+
+function advanceSlide(step, behavior) {
+  const current = Math.round(slideshow.scrollLeft / slideshow.clientWidth);
+  const next = (current + step + slides.length) % slides.length;
+  slideshow.scrollTo({ left: slides[next].offsetLeft, behavior });
+}
+
+function updateSlideshowPlayback() {
+  clearInterval(slideTimer);
+  slideshowToggleLabel.textContent = playing ? "Pause" : "Play";
+  if (playing && slideshowVisible && !document.hidden) {
+    slideTimer = setInterval(() => advanceSlide(1, "instant"), 5000);
+  }
+}
+
 slideshowControls.hidden = false;
-slideshowControls.querySelectorAll("button").forEach(button => {
+slideshowControls.querySelectorAll("[data-step]").forEach(button => {
   button.addEventListener("click", () => {
-    const current = Math.round(slideshow.scrollLeft / slideshow.clientWidth);
-    const next = (current + Number(button.dataset.step) + slides.length) % slides.length;
-    slideshow.scrollTo({
-      left: slides[next].offsetLeft,
-      behavior: reducedMotion.matches ? "instant" : "smooth"
-    });
+    advanceSlide(Number(button.dataset.step), reducedMotion.matches ? "instant" : "smooth");
+    updateSlideshowPlayback();
   });
 });
+
+slideshowToggle.addEventListener("click", () => {
+  playing = !playing;
+  updateSlideshowPlayback();
+});
+
+reducedMotion.addEventListener("change", event => {
+  if (event.matches) playing = false;
+  updateSlideshowPlayback();
+});
+document.addEventListener("visibilitychange", updateSlideshowPlayback);
+
+const slideshowObserver = new IntersectionObserver(([entry]) => {
+  slideshowVisible = entry.isIntersecting;
+  updateSlideshowPlayback();
+});
+slideshowObserver.observe(slideshow);
+updateSlideshowPlayback();
 
 const rsvpForm = document.querySelector(".rsvp-form");
 const attendance = rsvpForm.elements.attendance;

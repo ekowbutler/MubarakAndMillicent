@@ -238,8 +238,9 @@
         <li><img src="Highlights/368A9740.jpg" alt="Millicent seated beside Mubarak" loading="lazy" decoding="async"></li>
       </ul>
       <div class="slideshow-controls" hidden>
-        <button type="button" data-step="-1" aria-controls="slideshow-track">← Previous</button>
-        <button type="button" data-step="1" aria-controls="slideshow-track">Next →</button>
+        <button type="button" data-step="-1" aria-controls="slideshow-track"><span aria-hidden="true">←</span> Previous</button>
+        <button type="button" data-step="1" aria-controls="slideshow-track">Next <span aria-hidden="true">→</span></button>
+        <button type="button" class="slideshow-toggle" aria-controls="slideshow-track"><span class="slideshow-heart" aria-hidden="true">♥</span><span class="slideshow-toggle-label">Pause</span></button>
       </div>
     </section>
   </main>
